@@ -9,8 +9,8 @@ const News = () => {
         <SectionHeading heading='Exciting Travel News for you' subHeading='Read todays trending travel news'/>
 
         <div className='w-[80%] mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-20'>
-            {newsData.map((news)=>(
-                <div key={news.id}>
+            {newsData.map((news, index)=>(
+                <div key={news.id}  data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-delay={`${index*100}`}>
                     <NewsCard newsData={news}/>
                 </div>
             ))}

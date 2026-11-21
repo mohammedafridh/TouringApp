@@ -20,8 +20,8 @@ const Hero = () => {
             {/* text content */}
             <div className='absolute top-[50%] left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]'>
                 <div className='flex items-center justify-center flex-col w-full h-full'>
-                    <div>
-                        <h1 className='text-white uppercase font-bold text-[25px] md:text-[35px] mb-4 md:mb-0
+                    <div data-aos="fade-up">
+                        <h1  className='text-white uppercase font-bold text-[25px] md:text-[35px] mb-4 md:mb-0
                     lg:text-[45px] tracking[0.7 rem] text-center'>
                             Lets enjoy sri lanka
                         </h1>

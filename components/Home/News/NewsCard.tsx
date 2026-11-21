@@ -1,3 +1,5 @@
+
+
 import Image from 'next/image';
 import React from 'react'
 
@@ -27,7 +29,7 @@ const NewsCard = ({ newsData }: Props) => {
             {/* Text Content */}
             <div className='mt-4'>
                 <h1 className='font-semibold text-lg hover:text-blue-600 transition-all duration-300 cursor-pointer'>{newsData.desc}</h1>
-                <p className='text-sm mt-2 text-gray-500'>{new Date().toLocaleDateString('en-US', {
+                <p className='text-sm mt-2 text-gray-500'>{new Date('2026-11-10').toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
