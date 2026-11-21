@@ -35,9 +35,9 @@ const SearchBox = () => {
 
         {/* 4th item */}
         <div className='flex items-center space-x-6'>
-            <FaUserGroup className='text-blue-600 w-6 h-6'/>
+            <FaUserGroup className='text-blue-600 w-6 h-6 shrink-0'/>
             <div>
-                 <p className='text-lg font-medium mb-[0.2rem]'>Guest</p>
+                 <p className='text-lg font-medium mb-[0.2rem]'>Guests</p>
                 <input type="text" placeholder='1 Guest 1 Room'  className='border-none outline-none'/>
             </div>
         </div>
