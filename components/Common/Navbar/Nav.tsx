@@ -1,35 +1,44 @@
 'use client'
 import { navLinks } from '@/constant/constant'
 import Link from 'next/link'
-import React, {useState, useEffect} from 'react'
+import { usePathname } from 'next/navigation'
+import React, { useState, useEffect } from 'react'
 import { GiSriLanka } from 'react-icons/gi'
 import { HiBars3BottomRight } from 'react-icons/hi2'
 import { TbAirBalloon } from 'react-icons/tb'
 
 type Props = {
-    openNav:()=>void
+    openNav: () => void
 }
 
-const Nav = ({openNav}:Props) => {
+const Nav = ({ openNav }: Props) => {
 
-    const[navBg,setNavBg]=useState(false)
+    const [navBg, setNavBg] = useState(false)
 
-    useEffect(()=>{
-        const handler = ()=>{
-            if(window.scrollY>=90){
-                setNavBg(true)
-            }
-            if(window.scrollY<90){
-                setNavBg(false)
-            }
+    const pathname = usePathname()
+
+    useEffect(() => {
+        // const handler = ()=>{
+        //     if(window.scrollY>=90 || pathname!== '/'){
+        //         setNavBg(true)
+        //     }
+        //     if(window.scrollY<90){
+        //         setNavBg(false)
+        //     }
+        // }
+
+        const handler = () => {
+            setNavBg(window.scrollY >= 90 || pathname !== '/')
         }
 
+        handler()
+
         window.addEventListener("scroll", handler)
-        return ()=> window.removeEventListener("scroll", handler)
-    },[])
+        return () => window.removeEventListener("scroll", handler)
+    }, [pathname])
 
     return (
-        <div className={`${navBg?"bg-blue-950 shadow-md": "fixed"} transition-all duration-200 h-[12vh] z-[1000] fixed w-full`}>
+        <div className={`${navBg ? "bg-blue-950 shadow-md" : "fixed"} transition-all duration-200 h-[12vh] z-[1000] fixed w-full`}>
             <div className='flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto'>
                 {/* logo */}
                 <div className='flex items-center space-x-2'>
@@ -54,10 +63,10 @@ const Nav = ({openNav}:Props) => {
                 <div className='flex items-center space-x-4'>
                     <button className='md:px-12 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-gray-200
                     transition-all duration-200 rounded-lg'>
-                        Book Now
+                        Sign In
                     </button>
 
-                    <HiBars3BottomRight onClick={openNav} className='text-white h-8 w-8 cursor-pointer lg:hidden'/>
+                    <HiBars3BottomRight onClick={openNav} className='text-white h-8 w-8 cursor-pointer lg:hidden' />
                 </div>
             </div>
         </div>

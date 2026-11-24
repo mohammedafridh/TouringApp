@@ -5,6 +5,8 @@ import "./globals.css";
 import ResponsiveNav from "@/components/Common/Navbar/ResponsiveNav";
 import Footer from "@/components/Common/Footer/Footer";
 import ScrollToTop from "@/components/Helper/ScrollToTop";
+import { Toaster } from 'react-hot-toast'
+
 
 const font = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -25,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <ResponsiveNav />
         {children}
+        <Toaster position="top-center" />
         <Footer />
         <ScrollToTop />
       </body>
