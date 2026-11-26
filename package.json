@@ -9,7 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@hookform/resolvers": "^7.0.8",
+    "@mui/material": "^9.6.0",
     "aos": "^3.0.0-beta.6",
     "next": "16.4.3",
     "react": "19.3.0",

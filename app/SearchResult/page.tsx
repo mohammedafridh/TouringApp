@@ -1,5 +1,5 @@
 'use client'
-import SearchResult from '@/components/Pages/SearchResult/SearchResult'
+import SearchResult from '@/components/Pages/otherPages/SearchResult/SearchResult'
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 
